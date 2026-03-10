@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quinzena do Consumidor | Modas Dilô</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-pink: #E8A4B8;
+            --primary-coral: #F4A6A6;
+            --deep-rose: #C44569;
+            --soft-pink: #FADADD;
+            --cream: #FFF8F5;
+            --gold: #D4AF37;
+            --text-dark: #2D2D2D;
+            --text-light: #666666;
+            --white: #FFFFFF;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--deep-rose);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .header-cta {
+            background: linear-gradient(135deg, var(--deep-rose), var(--primary-coral));
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(196, 69, 105, 0.3);
+        }
+
+        .header-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(196, 69, 105, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--cream) 0%, var(--soft-pink) 100%);
+            padding: 120px 20px 60px;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(232, 164, 184, 0.3) 0%, transparent 70%);
+            animation: float 8s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text {
+            animation: fadeInLeft 1s ease;
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--deep-rose);
+            margin-bottom: 20px;
+        }
+
+        .hero-title span {
+            color: var(--primary-coral);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .hero-promo {
+            background: var(--white);
+            padding: 25px 35px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            border-left: 5px solid var(--deep-rose);
+        }
+
+        .hero-promo h3 {
+            font-size: 1.8rem;
+            color: var(--deep-rose);
+            margin-bottom: 10px;
+        }
+
+        .hero-promo p {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--deep-rose), var(--primary-coral));
+            color: var(--white);
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(196, 69, 105, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(196, 69, 105, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--deep-rose);
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--deep-rose);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-secondary:hover {
+            background: var(--deep-rose);
+            color: var(--white);
+        }
+
+        .hero-image {
+            animation: fadeInRight 1s ease;
+            position: relative;
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .promo-badge-float {
+            position: absolute;
+            bottom: -30px;
+            left: -30px;
+            width: 150px;
+            height: 150px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .promo-badge-float img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+        }
+
+        /* Countdown Section */
+        .countdown-section {
+            background: linear-gradient(135deg, var(--deep-rose), var(--primary-coral));
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .countdown-title {
+            color: var(--white);
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 30px 40px;
+            border-radius: 20px;
+            min-width: 140px;
+        }
+
+        .countdown-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--white);
+            font-family: 'Playfair Display', serif;
+            display: block;
+        }
+
+        .countdown-label {
+            color: var(--white);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 10px;
+            display: block;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 20px;
+            background: var(--white);
+        }
+
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            color: var(--deep-rose);
+            margin-bottom: 60px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: var(--cream);
+            padding: 40px 30px;
+            border-radius: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-pink);
+            box-shadow: 0 15px 40px rgba(196, 69, 105, 0.15);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--deep-rose), var(--primary-coral));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            color: var(--deep-rose);
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 100px 20px;
+            background: linear-gradient(180deg, var(--cream) 0%, var(--white) 100%);
+        }
+
+        .products-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .products-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .products-header h2 {
+            font-size: 2.8rem;
+            color: var(--deep-rose);
+            margin-bottom: 20px;
+        }
+
+        .products-header p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 25px;
+        }
+
+        .product-category {
+            color: var(--primary-coral);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .product-name {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin: 10px 0;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--deep-rose);
+        }
+
+        .product-price span {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            padding: 100px 20px;
+            background: var(--white);
+        }
+
+        .how-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 60px;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--deep-rose), var(--primary-coral));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+            margin: 0 auto 25px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .step h3 {
+            font-size: 1.4rem;
+            color: var(--deep-rose);
+            margin-bottom: 15px;
+        }
+
+        .step p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .step:not(:last-child)::after {
+            content: '→';
+            position: absolute;
+            right: -20px;
+            top: 35px;
+            font-size: 2rem;
+            color: var(--primary-pink);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 20px;
+            background: linear-gradient(135deg, var(--deep-rose), var(--primary-coral));
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .cta-text {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            background: var(--white);
+            color: var(--deep-rose);
+            padding: 20px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 60px 20px 30px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-pink);
+            margin-bottom: 20px;
+        }
+
+        .footer-text {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .footer-links h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--primary-pink);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-pink);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text {
+                order: 2;
+            }
+
+            .hero-image {
+                order: 1;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .promo-badge-float {
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: -40px;
+            }
+
+            .step:not(:last-child)::after {
+                display: none;
+            }
+
+            .countdown-number {
+                font-size: 2.5rem;
+            }
+
+            .countdown-item {
+                padding: 20px 30px;
+                min-width: 100px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .section-title,
+            .products-header h2 {
+                font-size: 2rem;
+            }
+
+            .countdown-title {
+                font-size: 1.8rem;
+            }
+
+            .cta-title {
+                font-size: 2rem;
+            }
+
+            .header-cta {
+                padding: 10px 20px;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Animations on scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="https://www.modasdilo.com.br" class="logo">Modas Dilô</a>
+            <a href="https://www.modasdilo.com.br" class="header-cta">Ir para Loja</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="hero-badge">Promoção Especial</span>
+                <h1 class="hero-title">Quinzena do <span>Consumidor</span></h1>
+                <p class="hero-subtitle">Celebre o Dia do Consumidor com uma oferta imperdível na nossa coleção de Moda Praia!</p>
+                
+                <div class="hero-promo">
+                    <h3>🎁 Leve 3 Pague 2</h3>
+                    <p>Na categoria Moda Praia. Aplicado automaticamente no carrinho de compras.</p>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="https://www.modasdilo.com.br" class="btn-primary">
+                        Aproveitar Oferta
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <a href="#como-funciona" class="btn-secondary">
+                        Como Funciona
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <img src="https://image.qwenlm.ai/public_source/3dd3e4c7-d0fe-4418-8c6b-886aeb3ae12a/124de203e-97fe-4b31-97b9-4cdbc49b51fa.png" alt="Quinzena do Consumidor Modas Dilô">
+                <div class="promo-badge-float">
+                    <img src="https://image.qwenlm.ai/public_source/3dd3e4c7-d0fe-4418-8c6b-886aeb3ae12a/1087bd1df-df01-44c9-be0e-5f9b29b31de9.png" alt="Leve 3 Pague 2">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section class="countdown-section">
+        <h2 class="countdown-title">⏰ Tempo Restante para Aproveitar</h2>
+        <div class="countdown-container">
+            <div class="countdown-item">
+                <span class="countdown-number" id="days">00</span>
+                <span class="countdown-label">Dias</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="hours">00</span>
+                <span class="countdown-label">Horas</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="minutes">00</span>
+                <span class="countdown-label">Minutos</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="seconds">00</span>
+                <span class="countdown-label">Segundos</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="features-container">
+            <h2 class="section-title fade-in">Por Que Aproveitar?</h2>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🏷️</div>
+                    <h3>Melhor Preço</h3>
+                    <p>Leve 3 peças e pague apenas 2. A peça de menor valor sai grátis automaticamente no carrinho.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">👙</div>
+                    <h3>Coleção Completa</h3>
+                    <p>Toda a nossa linha de Moda Praia com as últimas tendências da estação.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">🚚</div>
+                    <h3>Entrega Rápida</h3>
+                    <p>Receba suas peças em casa com segurança e rapidez em todo o Brasil.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">💳</div>
+                    <h3>Parcele Fácil</h3>
+                    <p>Condições especiais de pagamento para você aproveitar sem pesar no bolso.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products">
+        <div class="products-container">
+            <div class="products-header fade-in">
+                <h2>Destaques da Coleção</h2>
+                <p>Confira algumas das peças incríveis que fazem parte desta promoção especial</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card fade-in">
+                    <img src="https://image.qwenlm.ai/public_source/3dd3e4c7-d0fe-4418-8c6b-886aeb3ae12a/196eb8f6d-f4b5-4756-9f76-c73e02688e26.png" alt="Biquíni Collection" class="product-image">
+                    <div class="product-info">
+                        <span class="product-category">Moda Praia</span>
+                        <h3 class="product-name">Coleção Verão 2025</h3>
+                        <p class="product-price">A partir de <span>R$ 129,90</span></p>
+                    </div>
+                </div>
+                <div class="product-card fade-in">
+                    <img src="https://image.qwenlm.ai/public_source/3dd3e4c7-d0fe-4418-8c6b-886aeb3ae12a/196eb8f6d-f4b5-4756-9f76-c73e02688e26.png" alt="Maiô Elegance" class="product-image">
+                    <div class="product-info">
+                        <span class="product-category">Moda Praia</span>
+                        <h3 class="product-name">Maiôs Exclusivos</h3>
+                        <p class="product-price">A partir de <span>R$ 189,90</span></p>
+                    </div>
+                </div>
+                <div class="product-card fade-in">
+                    <img src="https://image.qwenlm.ai/public_source/3dd3e4c7-d0fe-4418-8c6b-886aeb3ae12a/196eb8f6d-f4b5-4756-9f76-c73e02688e26.png" alt="Saída de Praia" class="product-image">
+                    <div class="product-info">
+                        <span class="product-category">Moda Praia</span>
+                        <h3 class="product-name">Saídas de Praia</h3>
+                        <p class="product-price">A partir de <span>R$ 149,90</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="como-funciona">
+        <div class="how-container">
+            <h2 class="section-title fade-in">Como Funciona a Promoção</h2>
+            <div class="steps">
+                <div class="step fade-in">
+                    <div class="step-number">1</div>
+                    <h3>Escolha 3 Peças</h3>
+                    <p>Selecione quaisquer 3 produtos da categoria Moda Praia em nosso site.</p>
+                </div>
+                <div class="step fade-in">
+                    <div class="step-number">2</div>
+                    <h3>Adicione ao Carrinho</h3>
+                    <p>Coloque os 3 itens no seu carrinho de compras normalmente.</p>
+                </div>
+                <div class="step fade-in">
+                    <div class="step-number">3</div>
+                    <h3>Desconto Automático</h3>
+                    <p>O valor da peça de menor preço será descontado automaticamente no checkout!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content fade-in">
+            <h2 class="cta-title">Não Perca Esta Oportunidade!</h2>
+            <p class="cta-text">A promoção é válida apenas até 15/03 às 23:59. Garanta já suas peças favoritas da coleção de Moda Praia com o melhor desconto do ano!</p>
+            <a href="https://www.modasdilo.com.br" class="cta-button">
+                Aproveitar Agora
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline; vertical-align: middle; margin-left: 8px;">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div>
+                <div class="footer-logo">Modas Dilô</div>
+                <p class="footer-text">Há anos trazendo o que há de melhor em moda praia para você brilhar no verão com estilo e elegância.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Links Úteis</h4>
+                <ul>
+                    <li><a href="https://www.modasdilo.com.br">Loja Online</a></li>
+                    <li><a href="https://www.modasdilo.com.br">Coleções</a></li>
+                    <li><a href="https://www.modasdilo.com.br">Sobre Nós</a></li>
+                    <li><a href="https://www.modasdilo.com.br">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Atendimento</h4>
+                <ul>
+                    <li><a href="https://www.modasdilo.com.br">Política de Trocas</a></li>
+                    <li><a href="https://www.modasdilo.com.br">Prazos de Entrega</a></li>
+                    <li><a href="https://www.modasdilo.com.br">Formas de Pagamento</a></li>
+                    <li><a href="https://www.modasdilo.com.br">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Modas Dilô. Todos os direitos reservados. Promoção válida de 10/03 a 15/03 às 23:59.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const endDate = new Date('2025-03-15T23:59:59');
+            const now = new Date();
+            const diff = endDate - now;
+
+            if (diff <= 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // Scroll Animations
+        function handleScrollAnimations() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(element => {
+                const rect = element.getBoundingClientRect();
+                const isVisible = rect.top < window.innerHeight - 100;
+                if (isVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', handleScrollAnimations);
+        handleScrollAnimations();
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 4px 30px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
+            }
+        });
+    </script>
+</body>
+</html>
+
